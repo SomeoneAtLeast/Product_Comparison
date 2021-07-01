@@ -1,0 +1,31 @@
+.city {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 17px;
+    font-family: "Montserrat-SemiBold", sans-serif;
+}
+
+.city__img-pointer {
+    width: 12px;
+    margin-right: 10px;
+}
+
+.city__text {
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.city__img-pointer {
+    width: 12px;
+    margin-right: 10px;
+}
+
+.city__img-tick {
+    position: absolute;
+    right: 0;
+    top: 6.6px;
+    width: 8px;
+    height: 5px;
+    transition: 0.1s;
+}
