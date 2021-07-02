@@ -1,0 +1,123 @@
+.menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.menu__btn {
+    position: relative;
+    width: 19px;
+    height: 18px;
+    margin-right: 13px;
+    border: none;
+    border-top: 2px solid rgba(0, 0, 0, 1);
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
+    background-color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 0px;
+        width: 100%;
+        border-top: 2px solid rgba(0, 0, 0, 1);
+   }
+
+   &--active {
+       transform: rotate(90deg);
+   }
+}
+
+.menu__text {
+    font-family: "Montserrat-SemiBold", sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.menu__list {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    top: 20px;
+    left: -30px;
+    width: 320px;
+    margin: 0;
+    padding: 20px 0 37px 0;
+    list-style: none;
+    background-color: white;
+    box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+
+    &--active {
+        display: block;
+    }
+}
+
+.menu__list-item {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 259px;
+    padding: 13px 10px;
+    border-top: 1px solid rgb(124, 124, 124);
+
+    &:last-child {
+        border-bottom: 1px solid rgb(124, 124, 124);
+    }
+}
+
+.menu__list-item-link {
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.menu__list-item-link-img {
+    margin-right: 15px;
+}
+
+@media (min-width: 768px) {
+
+    .menu {
+        order: 4;
+        align-items: center;
+        height: 40px;
+        margin-top: 27px;
+    }
+
+    .menu__btn {
+        position: static;
+        width: 26px;
+        height: 26px;
+        margin-right: 18px;
+        border: none;
+        padding: 0;
+
+        &:before {
+            display: none;
+       }
+
+       &--active {
+        transform: rotate(60deg);
+    }
+    
+    }
+    
+    .menu__text {
+        font-family: "Montserrat-Medium", sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+    }  
+
+    .menu__img-tick {
+        position: absolute;
+        top: 18px;
+        right: -18px;
+    }
+}

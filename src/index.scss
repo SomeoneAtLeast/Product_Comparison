@@ -16,8 +16,14 @@
 	url(./fonts/Montserrat-SemiBold.ttf); 
 }
 
+@font-face {
+	font-family: "Montserrat-Bold"; 
+	src: local("Montserrat-Bold"),
+	url(./fonts/Montserrat-Bold.ttf); 
+}
 
 body {
+    min-width: 320px;
     margin: 0;
     font-family: "Montserrat-Medium", sans-serif;
     font-size: 10px;
