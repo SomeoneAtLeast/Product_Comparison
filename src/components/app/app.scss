@@ -1,9 +1,12 @@
 .header {
+    padding: 25px 30px 20px 30px;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.header__content-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 25px 30px 20px 30px;
-    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.06);
 }
 
 .header__logo-link {
@@ -15,12 +18,17 @@
     }
 }
 
-.header__city-and-tel-wrapper-link {
+.header__about-company-wrapper-link {
     color: black;
     text-decoration: none;
+    transition: 0.2s;
+
+    &:active {
+        transform: scale(0.95);
+    }
 }
 
-.header__city-and-tel {
+.header__about-company {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -33,7 +41,12 @@
         padding: 25px 59px 17px 59px;
     }
 
-    .header__city-and-tel {
+    .header__content-wrapper {
+        width: 650px;
+        margin: 0 auto;
+    }
+
+    .header__about-company {
         position: relative;
         order: 1;
         padding: 0;
@@ -44,5 +57,21 @@
     .header__logo-link {
         order: 2;
         margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .header {
+        padding: 19px 88px 17px 87px;
+    }
+
+    .header__content-wrapper {
+        width: 849px;
+    }
+
+    .header__about-company {
+        align-items: center;
+        margin-bottom: 29px;
     }
 }

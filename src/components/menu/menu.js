@@ -25,6 +25,9 @@ const Menu = () => {
     let listClassNames = "menu__list";
     if (showMenu) listClassNames += " menu__list--active";
 
+    let tickClassNames = "menu__img-tick";
+    if (showMenu) tickClassNames += " menu__img-tick--active";
+
     const menuItems = [
         {
             name: "Смартфоны",
@@ -61,15 +64,14 @@ const Menu = () => {
     let menuText = isMobile ? "Меню" : "Каталог";
 
     return (
-        <div className="menu">
+        <div className="menu" onClick={() => setShowMenu(!showMenu)}>
             <button 
-                className={btnClassNames}
-                onClick={() => setShowMenu(!showMenu)}>
+                className={btnClassNames}>
                     {isMobile ? null : <img src={menuBtn} alt="Каталог"/>}
                 </button>
             <span className="menu__text">{menuText}</span>
             {isMobile ? null : <img 
-                                    className="menu__img-tick"
+                                    className={tickClassNames}
                                     src={tick}
                                     width="7"
                                     alt="Развернуть/свернуть"/>}

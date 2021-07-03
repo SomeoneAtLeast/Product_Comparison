@@ -41,3 +41,18 @@
         line-height: 17px;
     }
 }
+
+@media (min-width: 1024px) {
+
+    .city {
+        margin-right: 32px;
+    }
+
+    .city__img-pointer {
+        margin-bottom: 1px;
+    }
+
+    .city__img-tick {
+        top: 5.5px;
+    }
+}

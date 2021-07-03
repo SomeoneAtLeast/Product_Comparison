@@ -131,3 +131,55 @@
     }
     
 }
+
+
+@media (min-width: 1024px) {
+
+    .user-btns {
+        width: 407px;
+    }
+
+    .user-btns__item {
+
+        &:first-child {
+
+            .user-btns__item-link {
+                margin-right: 4px;
+            }
+        }
+
+        &:last-child {
+
+            .user-btns__item-link {
+                margin-right: 19px;
+                margin-left: 25px;
+            }
+        }
+    }
+
+    .user-btns__item-cart-img {
+        right: -1px;
+    }
+
+    .user-btns__item-cart-number {
+        right: 8px;
+    }
+    
+    .user-btns__item-favorites-img {
+        position: absolute;
+        right: 7px;
+        top: -1px;
+    }
+
+    .user-btns__item-favorites-number {
+        position: absolute;
+        font-family: "Montserrat-Bold", sans-serif;; 
+        font-size: 11.4px;
+        line-height: 15px;
+        text-align: center;
+        color: white;
+        right: 16px;
+        top: 1px;
+        cursor: default;
+    }
+}

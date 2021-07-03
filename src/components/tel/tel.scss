@@ -18,11 +18,19 @@
         line-height: 24px;
         margin-left: auto;
         align-items: flex-start;
+        padding: 0.7px 0 0 30px;
     }
 
     .tel__img {
         position: absolute;
         top: 5px;
-        left: -30px;
+        left: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .tel {
+        top: 1px;
     }
 }

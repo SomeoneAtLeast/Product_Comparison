@@ -13,33 +13,45 @@ import SearchPanel from "../search-panel";
 import Menu from "../menu";
 import UserBtns from "../user-btns";
 import WhiteServiceLink from "../white-service-link";
+import YandexRating from "../yandex-link";
 
 const App = () => {
 
-    const {isMobile} = useResponsive();
+    const {isMobile, isMiniPc} = useResponsive();
 
     return (
         <Router>
             <div className = "app">
                 <header className="header">
-                    <Link 
-                        className="header__logo-link"
-                        to="/">
-                            <Logo/>
-                    </Link>
-                    <div className="header__city-and-tel">
+                    <div className="header__content-wrapper">
                         <Link 
-                            className="header__city-and-tel-wrapper-link"
-                            to="">
-                            <City/>
+                            className="header__logo-link"
+                            to="/">
+                                <Logo/>
                         </Link>
-                        {isMobile ? null : <Information/>}
-                        <Tel/>
+                        <div className="header__about-company">
+                            <Link 
+                                className="header__about-company-wrapper-link"
+                                to="/">
+                                <City/>
+                            </Link>
+                            <Link 
+                                className="header__about-company-wrapper-link"
+                                to="/">
+                                {isMiniPc ? <YandexRating/> : null}
+                            </Link>
+                            <Link 
+                                className="header__about-company-wrapper-link"
+                                to="/">
+                                {isMobile ? null : <Information/>}
+                            </Link>
+                            <Tel/>
+                        </div>
+                        <SearchPanel/>
+                        <Menu/>
+                        <UserBtns/>
+                        {isMobile ? null : <WhiteServiceLink/>}
                     </div>
-                    <SearchPanel/>
-                    <Menu/>
-                    <UserBtns/>
-                    {isMobile ? null : <WhiteServiceLink/>}
                 </header>
                 <main className="main">
                 </main>

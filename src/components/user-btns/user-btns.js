@@ -5,27 +5,29 @@ import {useResponsive} from "../../hooks/responsive.hook"
 
 import "./user-btns.scss";
 
-import favorites from "./favorites.png";
+import favorites320 from "./favorites320.png";
+import favorites1024 from "./favorites1024.png";
 import userAccount320 from "./user-account320.png";
 import cart320 from "./cart320.png";
 import numberOfProducts320 from "./number-of-products768.png";
 import userAccount768 from "./user-account768.png";
 import cart768 from "./cart768.png";
 import numberOfProducts768 from "./number-of-products768.png";
+import сomparison1024 from "./сomparison1024.png";
 
 const UserBtns = () => {
 
-    const {isMobile, isTablet} = useResponsive();
+    const {isMobile, isTablet, isMiniPc} = useResponsive();
 
     const btnsData = [
-        // {
-        //     name: "Сравнение",
-        //     img: smartphone,
-        //     id: 1
-        // },
+        {
+            name: "Сравнение",
+            img: сomparison1024,
+            id: 1
+        },
         {
             name: "Избранное",
-            img: favorites,
+            img: isMiniPc ? favorites1024 : favorites320,
             id: 2
         },
         {
@@ -44,7 +46,8 @@ const UserBtns = () => {
         <ul className="user-btns">
         {
             btnsData.map((item) => {
-                if (isTablet && item.name === "Избранное") return null
+                if (isTablet && !isMiniPc && item.name === "Избранное") return null;
+                if (!isMiniPc && item.name === "Сравнение") return null;
 
                 return (
                     <li 
@@ -62,13 +65,16 @@ const UserBtns = () => {
                                 </span> 
                             </Link>
                             <div className="user-btns__item-border"></div>
-                            {item.name === "Корзина" ? <img
-                                                            className="user-btns__item-cart-img" 
+                            {(item.name === "Корзина" || (item.name === "Избранное" && isMiniPc)) ? <img
+                                                            className={item.name === "Корзина" ? "user-btns__item-cart-img" : "user-btns__item-favorites-img"}
                                                             src={isMobile ? numberOfProducts320 : numberOfProducts768}
                                                             alt="Количество товаров в корзине"/>
                                                     :
                                                     null }
-                            {item.name === "Корзина" ? <span className="user-btns__item-cart-number" >2</span> : null}
+                            {(item.name === "Корзина" || (item.name === "Избранное" && isMiniPc)) ? <span
+                                                                                                        className={item.name === "Корзина" ? "user-btns__item-cart-number": "user-btns__item-favorites-number"}>
+                                                                                                            2
+                                                                                                        </span> : null}
                     </li>
                     )
                 }) 

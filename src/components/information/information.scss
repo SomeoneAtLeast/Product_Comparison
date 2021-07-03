@@ -30,3 +30,15 @@
         margin: 2px auto 0 auto;
     }
 }
+
+@media (min-width: 1024px) {
+
+    .information__text {
+        margin-top: 2px;
+        display: block;
+    }
+    
+    .information__img-tick {
+        left: 107px;
+    }
+}
