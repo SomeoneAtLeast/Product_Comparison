@@ -8,7 +8,7 @@ import magnifier from "./magnifier.png"
 
 const SearchPanel = () => {
 
-    const {isMiniPc} = useResponsive();
+    const {isMiniPc, isMediumPc} = useResponsive();
 
     return (
         <form className="search-panel"> 
@@ -21,7 +21,7 @@ const SearchPanel = () => {
                     className="search-panel__btn-img"
                     src={magnifier}
                     alt="Поиск товаров"/>
-                {isMiniPc ? <span className="search-panel__btn-text">Найти</span> : null}
+                {(isMiniPc && !isMediumPc) ? <span className="search-panel__btn-text">Найти</span> : null}
             </button>    
         </form>
     )

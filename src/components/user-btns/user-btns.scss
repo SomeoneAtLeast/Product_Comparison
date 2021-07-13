@@ -183,3 +183,31 @@
         cursor: default;
     }
 }
+
+@media (min-width: 1366px) {
+
+    .user-btns {
+        order: 4;
+        margin-left: 32px;
+        margin-right: 2px;
+    }
+
+    .user-btns__item-link {
+        height: 51px;
+    }
+    
+
+    .user-btns__item-link-img {
+        margin-top: 2px;
+    }
+
+    .user-btns__item-favorites-img,
+    .user-btns__item-cart-img {
+        top: 1px;
+    }
+
+    .user-btns__item-favorites-number,
+    .user-btns__item-cart-number {
+        top: 3px;
+    }
+}

@@ -14,10 +14,11 @@ import Menu from "../menu";
 import UserBtns from "../user-btns";
 import WhiteServiceLink from "../white-service-link";
 import YandexRating from "../yandex-link";
+import SocialBtns from "../social-btns";
 
 const App = () => {
 
-    const {isMobile, isMiniPc} = useResponsive();
+    const {isMobile, isMiniPc, isMediumPc} = useResponsive();
 
     return (
         <Router>
@@ -46,8 +47,10 @@ const App = () => {
                                 {isMobile ? null : <Information/>}
                             </Link>
                             <Tel/>
+                            {isMediumPc ? <SocialBtns/> : null}
                         </div>
                         <SearchPanel/>
+                        {isMediumPc ? <div className="header__border"/>: null}
                         <Menu/>
                         <UserBtns/>
                         {isMobile ? null : <WhiteServiceLink/>}

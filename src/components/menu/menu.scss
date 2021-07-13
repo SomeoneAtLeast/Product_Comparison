@@ -38,6 +38,10 @@
     cursor: pointer;
 }
 
+.menu__border {
+    display: none;
+}
+
 .menu__list {
     display: none;
     position: absolute;
@@ -139,5 +143,64 @@
 
     .menu {
         margin-right: 51px;
+    }
+}
+
+@media (min-width: 1366px) {
+
+    .menu {
+        order: 5;
+        width: 911px;
+        margin: 0;
+        margin-top: 34px;
+    }
+
+    .menu__border {
+        display: block;
+        width: 1px;
+        height: 15px;
+        background-color: #e6e6e6;
+    }
+
+    .menu__list {
+        display: flex;
+        position: static;
+        width: auto;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .menu__btn {
+        margin-left: 1px;
+        margin-right: 23px;
+    }
+
+    .menu__list-item {
+        width: auto;
+        border: none;
+        padding: 0;
+        padding-left: 10px;
+        padding-right: 27.4px;
+        margin-left: 11px;
+        
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .menu__list-item-link {
+        position: relative;
+    }
+
+    .menu__list-item-link-img {
+        margin-right: 10px;
+        margin-bottom: 1px;
+    }
+
+    .menu__list-item-link-tick {
+        position: absolute;
+        top: 8px;
+        right: -17px;
     }
 }

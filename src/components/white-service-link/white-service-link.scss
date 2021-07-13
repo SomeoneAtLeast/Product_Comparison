@@ -26,3 +26,12 @@
         margin-top: 11px;
     }
 }
+
+@media (min-width: 1366px) {
+
+    .white-service-link {
+        margin-top: 0;
+        margin-bottom: 2px;
+        align-self: flex-end;
+    }
+}

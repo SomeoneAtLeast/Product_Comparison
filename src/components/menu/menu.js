@@ -7,7 +7,7 @@ import "./menu.scss";
 
 import smartphone from "./smartphone.png";
 import tablet from "./tablet.png";
-import smartDevices from "./tablet.png";
+import smartDevices from "./smart-devices.png";
 import gadgets from "./gadgets.png";
 import audio from "./audio.png";
 import other from "./other.png";
@@ -16,7 +16,7 @@ import tick from "../../global-imgs/tick.svg"
 
 const Menu = () => {
     
-    const {isMobile} = useResponsive();
+    const {isMobile, isMediumPc} = useResponsive();
 
     const [showMenu, setShowMenu] = useState(false);
     let btnClassNames = "menu__btn";
@@ -64,20 +64,24 @@ const Menu = () => {
     let menuText = isMobile ? "Меню" : "Каталог";
 
     return (
-        <div className="menu" onClick={() => setShowMenu(!showMenu)}>
+        <div 
+            className="menu" 
+            onClick={isMediumPc ? null : () => setShowMenu(!showMenu)}>
             <button 
                 className={btnClassNames}>
                     {isMobile ? null : <img src={menuBtn} alt="Каталог"/>}
                 </button>
-            <span className="menu__text">{menuText}</span>
-            {isMobile ? null : <img 
+            {isMediumPc ? null : <span className="menu__text">{menuText}</span>}
+            {(isMobile || isMediumPc) ? null : <img 
                                     className={tickClassNames}
                                     src={tick}
                                     width="7"
                                     alt="Развернуть/свернуть"/>}
+            <div className="menu__border"/>                       
             <ul className={listClassNames}>
                 {
                    menuItems.map((item) => {
+                    if (isMediumPc && item.name === "Аудиотехника") return
                     return (
                         <li 
                             className="menu__list-item"
@@ -90,6 +94,13 @@ const Menu = () => {
                                         src={item.img}
                                         alt={item.name}/>
                                     {item.name}
+                                    {isMediumPc ? <img 
+                                    className="menu__list-item-link-tick"
+                                    src={tick}
+                                    width="7"
+                                    alt="Развернуть/свернуть"/>
+                                    :
+                                    null}
                                 </Link>
                         </li>
                     )
