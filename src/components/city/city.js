@@ -4,7 +4,7 @@ import {connect} from "react-redux"
 import "./city.scss";
 
 import pointer from "./pointer.png"
-import tick from "./tick.svg"
+import tick from "../../global-imgs/tick.svg"
 
 const City = () => {
     return (
@@ -18,7 +18,7 @@ const City = () => {
                 className="city__img-tick"
                 src={tick}
                 width="7"
-                alt="Указатель города"/>
+                alt="Развернуть/свернуть"/>
         </div>
     )
 }

@@ -1,7 +1,9 @@
 .search-panel {
+    position: relative;
     box-sizing: border-box;
     width: 100%;
-    padding: 15px 15px 0 15px;
+    padding: 15px 0px 0 0px;
+    margin-bottom: 20px;
 }
 
 .search-panel__input {
@@ -11,9 +13,98 @@
     border-radius: 5px;
     background-color: rgba(246, 246, 246, 1);
     color: rgba(96, 96, 96, 1);
-    padding: 11px 20px;
+    padding: 11px 40px 11px 20px;
     width: 100%;
     font-family: "Montserrat-Medium", sans-serif;
     font-size: 14px;
     line-height: 17px;
+}
+
+.search-panel__btn {
+    position: absolute;
+    top: 0;
+    top: 28px;
+    right: 19px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+@media (min-width: 768px) {
+
+    .search-panel {
+        order: 5;
+        width: 309px;
+        margin: 0;
+        padding: 0;
+        margin-top: 26px;
+        margin-left: auto;
+        margin-right: 11px;
+    }
+    
+    .search-panel__btn {
+        top: 13px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .search-panel {
+        width: auto;
+        flex-grow: 1;
+        margin-left: 0;
+
+    }
+
+    .search-panel__input {
+        padding: 11px 90px 11px 20px;
+    }
+
+    .search-panel__btn {
+        display: flex;
+        justify-content: space-between;
+        right: 19px;
+        width: 78px;
+    }
+
+    .search-panel__btn-text {
+        color: rgba(154, 154, 154, 1);
+        font-family: "Montserrat-SemiBold", sans-serif;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .search-panel__btn-img {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media (min-width: 1366px) {
+
+    .search-panel {
+        order: 3;
+        display: flex;
+        flex-grow: 1;
+        margin: 0;
+        width: 240px;
+    }
+
+    .search-panel__input {
+        padding: 26px 50px 26px 24px;
+        flex-grow: 1;
+        width: 240px;
+    }
+
+    .search-panel__btn {
+        width: auto;
+        right: 29px;
+        top: 28px;
+    }
 }

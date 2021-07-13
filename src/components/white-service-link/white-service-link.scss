@@ -1,0 +1,37 @@
+.white-service-link {
+    display: none;
+}
+
+
+@media (min-width: 768px) {
+
+    .white-service-link {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        order: 6;
+        background-color: rgba(0, 0, 0, 1);
+        height: 38px;
+        margin-top: 27px;
+        border-radius: 4px;
+        width: 169px;
+        transition: 0.2s;
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    .white-service-link__img {
+        margin-top: 11px;
+    }
+}
+
+@media (min-width: 1366px) {
+
+    .white-service-link {
+        margin-top: 0;
+        margin-bottom: 2px;
+        align-self: flex-end;
+    }
+}
